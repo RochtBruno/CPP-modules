@@ -8,21 +8,25 @@ SRC = PhoneBook.cpp \
 	Contact.cpp \
 	main.cpp
 
+OBJDIR = Objects
 
-OBJ = $(SRC:.cpp=.o)
+OBJ = $(SRC:%.cpp=$(OBJDIR)/%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean: 
-	rm -f $(OBJ)
+	@rm -rf $(OBJDIR)
+	@echo "Objects cleaned"
 
 fclean: clean
-	rm -f $(NAME) 
+	@rm -rf $(NAME)
+	@echo "phonebook cleaned"
 
 re: fclean all

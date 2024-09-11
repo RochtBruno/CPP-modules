@@ -5,7 +5,7 @@ PhoneBook::PhoneBook(): index(0), count (0) {}
         if (field.length() > 10) {
             return field.substr(0, 9) + ".";
         }
-        return field;
+        return std::string(10 -field.length(), ' ') + field;
 }
 
     void PhoneBook::addContact(){
@@ -73,7 +73,7 @@ PhoneBook::PhoneBook(): index(0), count (0) {}
             std::cout << "Phonebook is empty" << std::endl;
             return ;
         }
-        std::cout << "|---index---|--first name--|--las name--|--nickname--|" << std::endl;
+        std::cout << "|-index--|-firstname|-lastname-|-nickname-|" << std::endl;
         for(int i = 0; i < count; i++){
             std::cout << "    " << i << "    " << "|" << formatField(contacts[i].getFirstName()) 
             << "|" << formatField(contacts[i].getLastName()) << "|" 
