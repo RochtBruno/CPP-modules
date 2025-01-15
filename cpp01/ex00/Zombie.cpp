@@ -1,12 +1,13 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string zName) : name(zName){};
+//passado por referencia para evitar copia desnecessaria, usando lista de inicializacao
+Zombie::Zombie(const std::string &zName) : _name(zName){};
 
 Zombie::~Zombie(){
-	std::cout << name << " is dead" << std::endl;
+	std::cout << _name << " is dead" << std::endl;
 }
 
 void Zombie::announce(void){
-	std::cout << name << " BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << _name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 

@@ -5,8 +5,9 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
-	Zombie.cpp \
-	zombieHorde.cpp
+		HumanA.cpp \
+		HumanB.cpp \
+		Weapon.cpp \
 
 OBJ_DIR = objects
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)

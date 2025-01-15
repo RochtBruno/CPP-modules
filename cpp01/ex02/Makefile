@@ -1,10 +1,10 @@
 NAME = zombie
 
-CXX = clang++
+CXX = g++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp 
+SRC = main.cpp
 
 OBJ_DIR = objects
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
