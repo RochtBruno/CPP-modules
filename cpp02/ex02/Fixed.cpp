@@ -9,6 +9,14 @@ Fixed::Fixed(const Fixed &fixed){
 	*this = fixed;
 }
 
+Fixed::Fixed(const int value){
+	this->_value = value << this->_bits;
+};
+
+Fixed::Fixed(const float value){
+	this->_value = roundf(value * (1 << this->_bits));
+};
+
 int		Fixed::getRawBits(void) const{
 	return this->_bits;
 }
@@ -135,6 +143,11 @@ const	Fixed	&Fixed::max(const Fixed &a, const Fixed &b){
 	if(a > b)
 		return a;
 	return b;
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed){
+	out << fixed.toFloat();
+	return out;
 }
 
 Fixed::~Fixed(){
