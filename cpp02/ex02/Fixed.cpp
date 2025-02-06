@@ -33,6 +33,64 @@ Fixed &Fixed::operator=(const Fixed &other){
 	return *this;
 }
 
+bool	Fixed::operator>(const Fixed &fixed) const{
+	if(this->_value > fixed.getRawBits()){
+		return true;
+	}
+	return false;
+}
+
+bool	Fixed::operator>=(const Fixed &fixed) const {
+	if(this->_value >= fixed.getRawBits()){
+		return true;
+	}
+	return false;
+}
+
+bool	Fixed::operator<(const Fixed &fixed) const {
+	if(this->_value < fixed.getRawBits()){
+		return true;
+	}
+	return false;
+}
+
+bool	Fixed::operator<=(const Fixed &fixed) const {
+	if(this->_value <= fixed.getRawBits()){
+		return true;
+	}
+	return false;
+}
+
+bool	Fixed::operator!=(const Fixed &fixed) const {
+	if(this->_value == fixed.getRawBits()){
+		return true;
+	}
+	return false;
+}
+
+bool	Fixed::operator==(const Fixed &fixed) const {
+	if(this->_value == fixed.getRawBits()){
+		return true;
+	}
+	return false;
+}
+
+Fixed	Fixed::operator+(const Fixed &fixed) const{
+	return(Fixed(this->toFloat() + fixed.toFloat()));
+};
+
+Fixed	Fixed::operator-(const Fixed &fixed) const{
+	return(Fixed(this->toFloat() - fixed.toFloat()));
+};
+
+Fixed	Fixed::operator*(const Fixed &fixed) const{
+	return(Fixed(this->toFloat() * fixed.toFloat()));
+};
+
+Fixed	Fixed::operator/(const Fixed &fixed) const{
+	return (Fixed(this->toFloat() / fixed.toFloat()));
+};
+
 Fixed::~Fixed(){
 	std::cout << "Destructor method called" << std::endl;
 }
