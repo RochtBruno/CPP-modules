@@ -9,11 +9,13 @@ class Animal{
 	public:
 		Animal();
 		Animal(const Animal &other);
-		Animal &operator=(const Animal &other);
+		Animal(const std::string &type);
 		~Animal();
-		void		makeSound();
-		void		setType(std::string type);
-		std::string	getType(void);
+
+		Animal &operator=(const Animal &other);
+
+		virtual void	makeSound(); // virtual para fazer o override da função
+		std::string		getType(void) const;
 };
 
 
