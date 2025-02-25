@@ -1,14 +1,14 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain()) {
+Dog::Dog() : AAnimal("Dog"), _brain(new Brain()) {
 	std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other) , _brain(new Brain(*other._brain)) {
+Dog::Dog(const Dog &other) : AAnimal(other) , _brain(new Brain(*other._brain)) {
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type) {
+Dog::Dog(const std::string &type) : AAnimal(type) {
 	std::cout << "Dog type constructor called" << std::endl;
 }
 
@@ -32,7 +32,7 @@ void	Dog::makeSound() const{
 }
 
 std::string	Dog::getType(void) const {
-	return Animal::getType();
+	return AAnimal::getType();
 }
 
 

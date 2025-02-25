@@ -1,22 +1,21 @@
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <iostream>
 
-class Animal{
+class AAnimal {
 	protected:
 		std::string _type;
 	public:
-		Animal();
-		Animal(const Animal &other);
-		Animal(const std::string &type);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(const AAnimal &other);
+		AAnimal(const std::string &type);
+		virtual ~AAnimal();
 
-		Animal &operator=(const Animal &other);
+		AAnimal &operator=(const AAnimal &other);
 
-		virtual void	makeSound() const; // virtual serve para indicar ao compilador que a função será volátil.
+		virtual void	makeSound() const = 0; // Agora a classe é abstrata
 		std::string		getType(void) const;
 };
-
 
 #endif

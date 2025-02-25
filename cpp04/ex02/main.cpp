@@ -10,7 +10,7 @@ int	main(void)
 	int n = 10;
 	int half = n / 2;
 
-	Animal *animals[n];
+	AAnimal *animals[n];
 	Brain brain;
 
 
@@ -23,7 +23,7 @@ int	main(void)
 
 	Cat *cat = new Cat();
 	Cat *newCat = new Cat(*cat);
-	std::cout << brain.getIdeas();
+	//std::cout << brain.getIdeas();
 	delete cat;
 	delete newCat;
 

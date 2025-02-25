@@ -1,10 +1,10 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
+Cat::Cat() : AAnimal("Cat"), _brain(new Brain()) {
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other), _brain(new Brain()) {
+Cat::Cat(const Cat &other) : AAnimal(other), _brain(new Brain()) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = other;
 }
@@ -23,7 +23,7 @@ Cat::~Cat() {
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-Cat::Cat(const std::string &type) : Animal(type) {
+Cat::Cat(const std::string &type) : AAnimal(type) {
 	std::cout << "Cat type constructor called" << std::endl;
 }
 
