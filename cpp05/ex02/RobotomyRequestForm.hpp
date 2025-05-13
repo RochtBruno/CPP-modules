@@ -16,9 +16,4 @@ class RobotomyRequestForm : public AForm
 
 		void execute(const Bureaucrat &executor) const;
 
-		class OpenFileException : public std::exception
-		{
-			public:
-				const char *what() const throw();
-		};
 };

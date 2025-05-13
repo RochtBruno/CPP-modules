@@ -22,3 +22,7 @@ class ShrubberyCreationForm : public AForm
 				const char *what() const throw();
 		};
 };
+
+
+
+// std::ostream &operator<<(std::ostream &os, const ShrubberyCreationForm &form);

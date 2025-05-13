@@ -3,7 +3,10 @@ NAME = Form
 CC = c++
 
 SRC = Bureaucrat.cpp \
-		Form.cpp \
+		AForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
 		main.cpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
